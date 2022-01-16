@@ -1,0 +1,159 @@
+/* style du tetris */
+
+body 
+{
+  background-image: url("../img/arcade_background.jpg");
+  font-family: "Lucida Console", "Courier New", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#center
+{
+  background-color: aquamarine;
+  border: solid;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 15px;
+  border-radius: 2pc;
+  display: inline-block;
+}
+
+.container
+{
+  display: flex;
+}
+
+.grille
+{
+  width: 200px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(../img/space_background.png);
+  border: solid;
+  margin-top: 10px;
+}
+
+/* seletionne les <div> dans la div qui a la classe "grille" */
+.grille div
+{
+  height: 20px;
+  width: 20px;
+}
+
+.piece
+{
+  background-color: blue;
+  border-color: black;
+  border-width: 0.5px;
+}
+
+.mini-grille
+{
+  margin-left: 50px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: bisque;
+  border: solid;
+}
+
+.mini-grille div
+{
+  height: 20px;
+  width: 20px;
+}
+
+.button, #back_homepage, #bouton_lancer_partie, #restart-button
+{
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.button:hover, #back_homepage:hover, #bouton_lancer_partie:hover, #restart-button:hover
+{
+  background-color: #0a520c
+}
+
+.button:active, #back_homepage:active, #bouton_lancer_partie:active, #restart-button:active
+{
+  background-color: #3e8e41;
+  transform: translateY(2px);
+}
+
+h1, h2
+{
+  font-weight: bold;
+  border-style: solid;
+  border-radius: 1pc;
+  background-color: bisque;
+  padding: 5px;
+}
+
+#infos_jeu
+{
+  display: flex;
+  margin-right: 10px;
+}
+
+#infos_jeu h3
+{
+  border-style: solid;
+  padding: 4px;
+  margin-right: 10px;
+  border-radius: 1pc;
+  background-color: bisque;
+}
+
+/* style de homeplay */
+
+#homepage_game
+{
+  background-color: #2d99d8;
+  border-style: solid;
+  padding: 14px;
+  border-radius: 2em;
+  margin: 10px;
+}
+
+table 
+{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+  
+td, th 
+{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+table, th, td 
+{
+  border: 1px solid black;
+}
+
+tr:nth-child(even) /* colorier une ligne sur deux */
+{
+    background-color: #dddddd;
+}
+
+#bouton_lancer_partie
+{
+  margin-top: 20px;
+}

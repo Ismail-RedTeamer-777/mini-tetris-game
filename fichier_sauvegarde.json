@@ -1,0 +1,12 @@
+[
+  "partie"
+  {
+    "pseudo" : "",
+    "score" : 0,
+    "niveau" : 1
+  }
+  "plateau"
+  {
+    "coordonnes": "" 
+  }
+]

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="./img/favicon_tetris.png"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+  <title>🎮TETRIS GAME🎮</title>
+</head>
+<body>
+
+<div id="homepage_game">
+  <h1 align="center">WELCOME TO THE TETRIS GAME!</h1>
+  <table>
+    <tr>
+      <th>Joueur</th>
+      <th>Meilleur score</th>
+      <th>Niveau</th>
+    </tr>
+    <tr>
+      <td>Diego Brando</td>
+      <td>310</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Jotaro Kujoh</td>
+      <td>230</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td id="pseudo">Vous</td>
+      <td id="score">0</td>
+      <td id="niveau">1</td>
+    </tr>
+  </table>
+  
+  <button id="bouton_lancer_partie">Lancer une partie</button>
+  <h2 align="center">Règles du jeu</h2>
+  <div>
+    <p>▶️ La <b>"flèche de droite"</b> permet de déplacer la forme qui descend vers la droite.</p>
+    <p>◀️ La <b>"flèche de gauche"</b> permet de déplacer la forme qui descend vers la gauche.</p>
+    <p>🔽 La <b>"flèche du bas"</b> accélère la descente de la forme.</p>
+    <p>🔼 La <b>"flèche du haut"</b> permet de faire pivoter dans le sens horaire la forme.</p>
+    <p>⏹ La <b>"barre d'espace"</b> permet de faire descendre complètement la forme.</p>
+    <p>✅ Lorsqu'une ligne est complète, vous recevez <b>10 points</b>.</p>
+    <p>⛔️ La <b>vitesse de chute</b> des pièces augmente avec l'accumulation de points.</p>
+    <p>🏳️ Si une pièce reste bloquée en haut, <b>vous perdez!</b></p>
+  </div>
+
+</div>
+
+<div id="tetris_game" hidden>
+  <img src="./img/tetris_logo.gif" width="310" height="150">
+
+  <div id="center">
+    <button id="back_homepage">Back to homepage</button>
+
+    <div id="infos_jeu">
+      <h3>Score: <span id="score">0</span></h3>
+      <h3>Niveau: <span id="niveau">1</span></h3>
+    </div>
+
+    <button id="start-button" class="button">Play/Pause</button>
+    <button id="restart-button">Recommencer</button>
+    
+    <audio id="click_sound">
+      <source src="audios/game_click_sound.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="container">
+      <div class="grille">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <!-- limite basse du jeu -->
+        <div class="limite"></div>
+        <div class="limite"></div>
+        <div class="limite"></div>
+        <div class="limite"></div>
+        <div class="limite"></div>
+        <div class="limite"></div>
+        <div class="limite"></div>
+        <div class="limite"></div>
+        <div class="limite"></div>
+        <div class="limite"></div>
+      </div>
+
+      <div class="mini-grille">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
+  <img src="./img/tetris_logo.gif" width="310" height="150">
+
+  <audio autoplay loop>
+    <source src="audios/blue_eiffel_69.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="game_over_sound">
+    <source src="audios/game_over_sound.mp3" type="audio/mpeg">
+  </audio>
+
+</div>
+</body>
+<!-- import du JS après chargement du DOM -->
+<script src="javascript/app.js" charset="utf-8"></script>
+
+</html>
